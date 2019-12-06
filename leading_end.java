@@ -8,9 +8,14 @@ class leading_end{
         newtime.getTime();
         TeaShop teaShop = new TeaShop();
         MilkTea milkTea = new MilkTea();
-        Bubble bubble=new Bubble(2019,11,4);
+        Bubble bubble=new Bubble(2019,12,4);
         Coconut coconut=new Coconut(2019,11,4);
         teaShop.addingredient(coconut);
+        milkTea.add_ingredient(coconut);
+        System.out.println("欢迎来到西二奶茶店");
+        System.out.println("我们现在在售的奶茶有：");
+        System.out.println(milkTea.toString());
+        System.out.println("请输入想要的奶茶和配料");
         try{
             String milkname=scanner.nextLine();
             String ingredientname=scanner.nextLine();
@@ -22,8 +27,6 @@ class leading_end{
         System.out.println("我们现在在售的奶茶有：");
         System.out.println(milkTea.toString());
         System.out.println("请输入想要的奶茶和配料");
-        String milkname=scanner.nextLine();
-        String ingredientname=scanner.nextLine();
         try {
             if(ingredientname.equals("Bubble")&&teaShop.num_bubble()==0){
                 throw new SoldOutException("该配料已经售空");
